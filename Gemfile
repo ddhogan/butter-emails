@@ -30,8 +30,8 @@ gem 'jbuilder', '~> 2.5'
 # Use ActiveModel has_secure_password
 gem 'bcrypt', '~> 3.1.7'
 
-# use React frontend
-gem 'react-rails'
+# use Foreman to launch both servers
+gem 'foreman'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
