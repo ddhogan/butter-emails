@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
+import my_logo from './butter_emails.png';
 import './App.css';
 import PostsContainer from './components/PostsContainer';
 
@@ -8,12 +8,11 @@ class App extends Component {
     return (
       <div className="App">
         <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Welcome to React</h1>
+          <img src={my_logo} className="App-logo" alt="logo" />
+          <h1 className="App-title">Welcome to ButterEmails</h1>
+          <p><i>Another Twitter clone</i></p>
         </header>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
+        
         <PostsContainer />
       </div>
     );
