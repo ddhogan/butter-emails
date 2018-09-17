@@ -5,12 +5,7 @@ export default function postsReducer(state ={
     case "FETCH_POSTS":
       return state.posts
     case "CREATE_POST":
-      const post = {
-        content: action.payload.text
-      }
-      return { posts: state.posts.concat(post) };
-    case "DELETE_POST":
-      return { posts: state.posts.filter(post => post.id !== action.id)}
+      return state.concat(action.payload)
     default:
       return state;
   };
