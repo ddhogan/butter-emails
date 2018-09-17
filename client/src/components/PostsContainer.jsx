@@ -8,7 +8,7 @@ class PostsContainer extends Component {
     return (
       <div>
         <p>this is the posts container</p>
-        <PostInput />
+        <PostInput createPost={this.props.createPost}/>
         <Posts posts={this.props.posts} />
       </div>
     )
@@ -16,5 +16,9 @@ class PostsContainer extends Component {
 }
 
 const mapStateToProps = state => ({ posts: state.posts });
+const mapDispatchToProps = dispatch => ({
+  createPost: content => dispatch({ type: "CREATE_POST", content }),
+  deletePost: id => dispatch({ type: "DELETE_POST", id})
+})
 
-export default connect(mapStateToProps)(PostsContainer);
+export default connect(mapStateToProps, mapDispatchToProps)(PostsContainer);
