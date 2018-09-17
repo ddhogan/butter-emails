@@ -6,7 +6,6 @@ class Post extends Component {
 
     return (
       <div className="post">
-        <p>A single post</p>
         <p>{post.content}</p>
       </div>
     )

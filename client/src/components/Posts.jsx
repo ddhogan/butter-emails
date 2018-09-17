@@ -15,7 +15,6 @@ class Posts extends Component {
 
     return (
       <div>
-        <p>All the posts</p>
         {postList}
       </div>
     );

@@ -7,7 +7,6 @@ class PostsContainer extends Component {
   render() {
     return (
       <div>
-        <p>this is the posts container</p>
         <PostInput />
         <Posts posts={this.props.posts} />
       </div>

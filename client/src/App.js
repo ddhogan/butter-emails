@@ -10,7 +10,7 @@ class App extends Component {
         <header className="App-header">
           <img src={my_logo} className="App-logo" alt="logo" />
           <h1 className="App-title">Welcome to ButterEmails</h1>
-          <p><i>Another Twitter clone</i></p>
+          <p><i>Another tiny Twitter clone</i></p>
         </header>
         
         <PostsContainer />
