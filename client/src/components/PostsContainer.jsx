@@ -15,5 +15,8 @@ class PostsContainer extends Component {
 }
 
 const mapStateToProps = state => ({ posts: state.posts });
+const mapDispatchToProps = dispatch => ({
+  deletePost: id => dispatch({ type: "DELETE_POST", id })
+})
 
-export default connect(mapStateToProps)(PostsContainer);
+export default connect(mapStateToProps, mapDispatchToProps)(PostsContainer);
