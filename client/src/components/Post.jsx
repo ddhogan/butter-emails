@@ -1,27 +1,29 @@
-// import React, { Component } from 'react';
-import React from 'react';
+import React, { Component } from 'react';
+// import React from 'react';
 
-// class Post extends Component {
+class Post extends Component {
   
-//   render () {
-//     const { post } = this.props;
-
-//     return (
-//       <div className="post">
-//         <p>{post.content}</p>
-//         <button onClick={this.props.handleOnClick}>X </button>
-//       </div>
-//     )
-//   }
-// }
-
-const Post = props => {
-  return (
-    <div className="post">
-      <p>{props.post.content}</p>
-      <button onClick={props.handleOnClick}>X </button>
-    </div>
-  )
+  handleOnClick = () => {
+    this.props.deletePost(this.props.id)
+  }
+  
+  render () {
+    return (
+      <div className="post">
+        <p>Post #{this.props.post.id}: {this.props.post.content}</p>
+        <button onClick={this.handleOnClick}>X </button>
+      </div>
+    )
+  }
 }
+
+// const Post = props => {
+//   return (
+//     <div className="post">
+//       <p>Post #{props.post.id}: {props.post.content}</p>
+//       <button onClick={props.deletePost}>X </button>
+//     </div>
+//   )
+// }
 
 export default Post;

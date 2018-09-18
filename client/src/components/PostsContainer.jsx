@@ -14,7 +14,8 @@ class PostsContainer extends Component {
   }
 }
 
-const mapStateToProps = state => ({ posts: state.posts });
+// const mapStateToProps = state => ({ posts: state.posts });
+const mapStateToProps = ({ posts }) => ({ posts })
 const mapDispatchToProps = dispatch => ({
   createPost: content => dispatch({ type: "CREATE_POST", content}),
   deletePost: id => dispatch({ type: "DELETE_POST", id })

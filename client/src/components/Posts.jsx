@@ -3,9 +3,13 @@ import React, { Component } from 'react';
 import Post from './Post';
 
 class Posts extends Component {
+  // constructor(props) {
+  //   super(props)
+  // }
+  
   render() {
     const { posts } = this.props.posts;
-    const postList = posts.map(post => {
+    const postList = posts.map(post =>{
       return (
         <Post 
           key={post.id}
