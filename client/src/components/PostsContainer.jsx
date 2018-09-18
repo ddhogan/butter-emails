@@ -7,15 +7,17 @@ class PostsContainer extends Component {
   render() {
     return (
       <div>
-        <PostInput />
-        <Posts posts={this.props.posts} />
+        <PostInput createPost={this.props.createPost}/>
+        <Posts posts={this.props.posts} deletePost={this.props.deletePost} />
       </div>
     )
   }
 }
 
-const mapStateToProps = state => ({ posts: state.posts });
+// const mapStateToProps = state => ({ posts: state.posts });
+const mapStateToProps = ({ posts }) => ({ posts });
 const mapDispatchToProps = dispatch => ({
+  createPost: content => dispatch({ type: "CREATE_POST", content}),
   deletePost: id => dispatch({ type: "DELETE_POST", id })
 })
 

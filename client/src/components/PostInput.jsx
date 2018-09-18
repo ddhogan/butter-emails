@@ -1,10 +1,9 @@
 import React, { Component } from 'react';
-import { connect } from 'react-redux';
 
 class PostInput extends Component {
-  constructor(props) {
-    super(props);
-    this.state = { content: '', };
+  constructor() {
+    super();
+    this.state = { content: '', id: 0};
   }
 
   handleChange(event) {
@@ -13,7 +12,7 @@ class PostInput extends Component {
 
   handleSubmit = event => {
     event.preventDefault();
-    this.props.createPost(this.state);
+    this.props.createPost(this.state.content);
     this.setState({ content: '', });
   }
 
@@ -34,8 +33,4 @@ class PostInput extends Component {
   }
 }
 
-const mapDispatchToProps = dispatch => ({
-  createPost: formData => dispatch({ type: "CREATE_POST", payload: formData })
-})
-
-export default connect(null, mapDispatchToProps)(PostInput);
+export default PostInput;

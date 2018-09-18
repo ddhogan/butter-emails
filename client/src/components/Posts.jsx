@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import { connect } from 'react-redux';
 import Post from './Post';
 
 class Posts extends Component {
@@ -23,7 +22,4 @@ class Posts extends Component {
   }
 }
 
-const mapDispatchToProps = dispatch => ({
-  deletePost: id => dispatch({ type: "DELETE_POST", id })
-})
-export default connect(null, mapDispatchToProps)(Posts);
+export default Posts;
