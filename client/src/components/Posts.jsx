@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+// import React from 'react';
 import Post from './Post';
 
 class Posts extends Component {
@@ -21,5 +22,15 @@ class Posts extends Component {
     );
   }
 }
+
+// const Posts = props => {
+//   const postList = props.posts.map(post => <Post key={post.id} {...post} deletePost={props.deletePost} />)
+
+//   return (
+//     <div>
+//       {postList}
+//     </div>
+//   );
+// };
 
 export default Posts;

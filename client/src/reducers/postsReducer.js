@@ -11,7 +11,7 @@ export default function postsReducer(state = {
       }
       return { posts: state.posts.concat(post) }
     case "DELETE_POST":
-      return { posts: state.posts.filter(post => post.id !== action.id) }
+      return { posts: state.posts.filter(post => post.id !== action.payload) }
     default:
       return state;
   };
