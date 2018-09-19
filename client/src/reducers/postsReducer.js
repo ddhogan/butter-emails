@@ -3,9 +3,6 @@ export default function postsReducer(state = {
 }, action) {
   switch(action.type){
     
-    case "FETCH_POSTS":
-      return state.posts
-    
     case "CREATE_POST":
       const post = {
         id: Math.floor(Math.random()*1000),
