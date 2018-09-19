@@ -4,6 +4,7 @@ import Posts from './Posts';
 import PostInput from './PostInput';
 
 class PostsContainer extends Component {
+
   render() {
     return (
       <div>
@@ -18,7 +19,8 @@ class PostsContainer extends Component {
 const mapStateToProps = ({ posts }) => ({ posts })
 const mapDispatchToProps = dispatch => ({
   createPost: content => dispatch({ type: "CREATE_POST", content}),
-  deletePost: id => dispatch({ type: "DELETE_POST", id })
+  deletePost: id => dispatch({ type: "DELETE_POST", id }),
+  // fetchPosts: () => dispatch({ type: "LOADING_POSTS" })
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(PostsContainer);
