@@ -10,8 +10,7 @@ class Post extends Component {
   render () {
     return (
       <div className="post">
-        <p>Post #{this.props.post.id}: {this.props.post.content}</p>
-        <button onClick={this.handleOnClick}>X </button>
+        <p>Post #{this.props.post.id}: {this.props.post.content}  <button onClick={this.handleOnClick}>X </button></p>
       </div>
     )
   }
