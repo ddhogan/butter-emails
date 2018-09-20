@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import Posts from './Posts';
 import PostInput from './PostInput';
-import { deletePost, createPost } from '../actions/postActions';
+import { deletePost, createPost } from '../../actions/postActions';
 
 class PostsContainer extends Component {
 

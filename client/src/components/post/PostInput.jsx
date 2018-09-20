@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import * as actions from '../actions/postActions';
+import * as actions from '../../actions/postActions';
 import { bindActionCreators } from 'redux';
 
 class PostInput extends Component {

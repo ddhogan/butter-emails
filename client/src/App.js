@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import my_logo from './butter_emails.png';
 import './App.css';
-import PostsContainer from './components/PostsContainer';
+import PostsContainer from './components/post/PostsContainer';
 import { connect } from 'react-redux';
 import { fetchPosts } from './actions/postActions'
 
