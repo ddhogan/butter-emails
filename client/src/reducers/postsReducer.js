@@ -8,7 +8,6 @@ export default function postsReducer(state = {
         // id: Math.floor(Math.random()*1000),
         // content: action.content
       // }
-      // return { posts: state.posts.concat(post) }
       return { ...state, posts: [...state.posts, action.payload] }
     
     case "DELETE_POST":

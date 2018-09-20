@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import Posts from './Posts';
 import PostInput from './PostInput';
-import { deletePost } from '../actions/postActions';
+import { deletePost, createPost } from '../actions/postActions';
 
 class PostsContainer extends Component {
 
@@ -16,11 +16,10 @@ class PostsContainer extends Component {
   }
 }
 
-// const mapStateToProps = state => ({ posts: state.posts });
-const mapStateToProps = ({ posts }) => ({ posts })
+const mapStateToProps = state => ({ posts: state.posts });
+
 const mapDispatchToProps = dispatch => ({
-  createPost: post => dispatch({ type: "CREATE_POST", post}),
-  // deletePost: postId => dispatch({ type: "DELETE_POST", postId }),
+  createPost: post => dispatch(createPost(post)),
   deletePost: postId => dispatch(deletePost(postId)),
 })
 
