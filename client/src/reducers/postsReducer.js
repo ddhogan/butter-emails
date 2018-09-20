@@ -19,6 +19,9 @@ export default function postsReducer(state = {
     case "FETCH_POSTS":
       return { loading: false, posts: action.payload };
     
+    // case "EDIT_POST":
+    //   return {  };
+    
     default:
       return state;
   }

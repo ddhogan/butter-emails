@@ -32,3 +32,15 @@ export function deletePost(postId) {
     .then(post => dispatch({ type: "DELETE_POST", payload: post }))
   };
 };
+
+export function editPost(postId, newContent) {
+  return (dispatch) => {
+    return fetch(`/posts/${postId}`, {
+      method: 'PATCH',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({'post': {content: newContent, id: postId}}),
+    })
+    .then(response => response.json())
+    .then(post => dispatch({ type: "EDIT_POST", payload: post}))
+  }
+}
