@@ -1,4 +1,5 @@
 class PostsController < ApplicationController
+  
   def index
     render json: Post.all
   end
@@ -8,7 +9,16 @@ class PostsController < ApplicationController
     if @post.save
       render json: @post
     else
-      render json: { message: @post.errors }, status: 400
+      render json: { message: @post.errors }, status: :unprocessable_entity
+    end
+  end
+
+  def update
+    @post = Post.find_by(id: params[:id])
+    if @post.update(post_params)
+      render json: @post
+    else
+      render json: { message: @post.errors}, status: :unprocessable_entity 
     end
   end
 
@@ -17,7 +27,7 @@ class PostsController < ApplicationController
     if @post.destroy
       render json: @post.as_json(only: [:id])
     else
-      render json: { message: "could not delete" }, status: 400
+      render json: { message: "could not delete" }, status: :unprocessable_entity
     end
   end
 
