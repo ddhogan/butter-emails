@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-// import React from 'react';
 
 class Post extends Component {
   
@@ -15,14 +14,5 @@ class Post extends Component {
     )
   }
 }
-
-// const Post = props => {
-//   return (
-//     <div className="post">
-//       <p>Post #{props.post.id}: {props.post.content}</p>
-//       <button onClick={props.deletePost}>X </button>
-//     </div>
-//   )
-// }
 
 export default Post;

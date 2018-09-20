@@ -1,4 +1,7 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import * as actions from '../actions/postActions';
+import { bindActionCreators } from 'redux';
 
 class PostInput extends Component {
   constructor() {
@@ -12,7 +15,7 @@ class PostInput extends Component {
 
   handleSubmit = event => {
     event.preventDefault();
-    this.props.createPost(this.state.content);
+    this.props.actions.createPost(this.state.content);
     this.setState({ content: '', });
   }
 
@@ -23,6 +26,7 @@ class PostInput extends Component {
           <label>Create Post: </label>
           <input 
             type="text"
+            name="content"
             value={this.state.content}
             onChange={(event) => this.handleChange(event)} 
           />
@@ -33,4 +37,11 @@ class PostInput extends Component {
   }
 }
 
-export default PostInput;
+const mapDispatchToProps = (dispatch) => {
+  return { actions: bindActionCreators(actions, dispatch)}
+}
+const mapStateToProps = (state) => {
+  return { posts: state.posts.posts.content }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(PostInput);

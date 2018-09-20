@@ -18,9 +18,8 @@ class PostsContainer extends Component {
 // const mapStateToProps = state => ({ posts: state.posts });
 const mapStateToProps = ({ posts }) => ({ posts })
 const mapDispatchToProps = dispatch => ({
-  createPost: content => dispatch({ type: "CREATE_POST", content}),
+  createPost: post => dispatch({ type: "CREATE_POST", post}),
   deletePost: id => dispatch({ type: "DELETE_POST", id }),
-  // fetchPosts: () => dispatch({ type: "LOADING_POSTS" })
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(PostsContainer);
