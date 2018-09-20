@@ -6,16 +6,17 @@ import { bindActionCreators } from 'redux';
 class PostInput extends Component {
   constructor() {
     super();
-    this.state = { content: '', id: 0};
+    this.state = { content: '',};
   }
 
   handleChange(event) {
-    this.setState({ content: event.target.value });
+    const { name, value } = event.target
+    this.setState({ [name]: value });
   }
 
   handleSubmit = event => {
     event.preventDefault();
-    this.props.actions.createPost(this.state.content);
+    this.props.actions.createPost(this.state);
     this.setState({ content: '', });
   }
 

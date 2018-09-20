@@ -17,6 +17,6 @@ export function createPost (post) {
       body: JSON.stringify(post),
     })
     .then(response => response.json())
-    .then(content => dispatch({ type: "CREATE_POST", payload: content }))
+    .then(data => dispatch({ type: "CREATE_POST", payload: data }))
   };
 };
