@@ -12,6 +12,15 @@ class PostsController < ApplicationController
     end
   end
 
+  def destroy
+    @post = Post.find_by(id: params[:id])
+    if @post.destroy
+      render status: 204
+    else
+      render json: { message: "could not delete" }, status: 400
+    end
+  end
+
   private
 
   def post_params

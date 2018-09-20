@@ -17,10 +17,10 @@ export default function postsReducer(state = {
     case "LOADING_POSTS":
       return { loading: true, posts: [] };
     
-     case "FETCH_POSTS":
+    case "FETCH_POSTS":
       return { loading: false, posts: action.payload };
     
     default:
       return state;
-  };
+  }
 }

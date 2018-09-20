@@ -20,3 +20,23 @@ export function createPost (post) {
     .then(data => dispatch({ type: "CREATE_POST", payload: data }))
   };
 };
+
+export function deletePost (id) {
+  return (dispatch) => {
+    dispatch(removePost(id));
+    return fetch(`/posts/${id}`, {
+      method: 'DELETE',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(id),
+    })
+    .then(response => response)
+    // .then(data => dispatch({ type: "DELETE_POST", payload: data }))
+  };
+};
+
+export function removePost (id) {
+  return {
+    type: 'DELETE_POST',
+    id
+  }
+}
