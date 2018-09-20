@@ -12,7 +12,7 @@ export default function postsReducer(state = {
       return { ...state, posts: [...state.posts, action.payload] }
     
     case "DELETE_POST":
-      return { posts: state.posts.filter(post => post.id !== action.id) }
+      return { posts: state.posts.filter(post => post.id !== action.payload.id) }
     
     case "LOADING_POSTS":
       return { loading: true, posts: [] };

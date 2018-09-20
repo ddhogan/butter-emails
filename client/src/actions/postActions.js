@@ -21,22 +21,22 @@ export function createPost (post) {
   };
 };
 
-export function deletePost (id) {
+export function deletePost(postId) {
   return (dispatch) => {
-    dispatch(removePost(id));
-    return fetch(`/posts/${id}`, {
+    // dispatch(removePost(id));
+    return fetch(`/posts/${postId}`, {
       method: 'DELETE',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify(id),
+      // headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({'post': {id: postId}}),
     })
-    .then(response => response)
-    // .then(data => dispatch({ type: "DELETE_POST", payload: data }))
+    .then(response => response.json())
+    .then(post => dispatch({ type: "DELETE_POST", payload: post }))
   };
 };
 
-export function removePost (id) {
-  return {
-    type: 'DELETE_POST',
-    id
-  }
-}
+// export function removePost (id) {
+//   return {
+//     type: 'DELETE_POST',
+//     id
+//   }
+// }
