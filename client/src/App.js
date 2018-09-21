@@ -3,7 +3,7 @@ import { Route } from 'react-router-dom';
 import About from './components/About';
 import Login from './components/Login';
 import my_logo from './butter_emails.png';
-import './App.css';
+import './css/App.css';
 import PostsContainer from './components/post/PostsContainer';
 import { connect } from 'react-redux';
 import { fetchPosts } from './actions/postActions'
