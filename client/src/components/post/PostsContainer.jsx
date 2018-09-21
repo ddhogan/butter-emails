@@ -3,12 +3,13 @@ import { connect } from 'react-redux';
 import Posts from './Posts';
 import PostInput from './PostInput';
 import { deletePost, createPost } from '../../actions/postActions';
+import '../../css/PostsContainer.css';
 
 class PostsContainer extends Component {
 
   render() {
     return (
-      <div>
+      <div className="container">
         <PostInput createPost={this.props.createPost}/>
         <Posts posts={this.props.posts} deletePost={this.props.deletePost} />
       </div>
