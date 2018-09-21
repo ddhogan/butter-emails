@@ -1,0 +1,10 @@
+form {
+  margin-top: 10px;
+  margin-bottom: 20px;
+}
+
+label {
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 0.9em;
+  color: #6e6e6e;
+}

@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import * as actions from '../../actions/postActions';
 import { bindActionCreators } from 'redux';
+import '../../css/PostInput.css';
 
 class PostInput extends Component {
   constructor() {
