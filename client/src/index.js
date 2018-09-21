@@ -23,3 +23,13 @@ ReactDOM.render(
   </Provider>, 
 document.getElementById('root'));
 registerServiceWorker();
+
+//  Might want to follow this pattern instead, and take the routes out of App.js, and convert it's header stuff into a Navbar
+  // <Router>
+  //   <React.Fragment>
+  //     <Navbar />
+  //     <Route exact path="/" component={Home} />
+  //     <Route exact path="/about" component={About} />
+  //     <Route exact path="/login" component={Login} />
+  //   </React.Fragment>
+  // </Router>),
