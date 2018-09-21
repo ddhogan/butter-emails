@@ -7,19 +7,15 @@ class Posts extends Component {
     const { posts } = this.props.posts;
     const postList = posts.map(post =>{
       return (
-        <div className="postList">
-          <Post 
-          key={post.id}
-          post={post}
-          deletePost={this.props.deletePost}
-          />
-        </div>
-        
+        <Post 
+        key={post.id}
+        post={post}
+        deletePost={this.props.deletePost} />
       )
     });
 
     return (
-      <div>
+      <div className="postList">
         {postList}
       </div>
     );
