@@ -1,5 +1,5 @@
-.postList {
-  /* width: 400px;
-  text-align: center;
-  align-items: center; */
+.container {
+  width: 400px;
+  float: none;
+  margin: 0 auto;
 }
