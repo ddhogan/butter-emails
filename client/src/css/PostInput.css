@@ -1,0 +1,13 @@
+form {
+  display: inline-block;
+  /* text-align:left; */
+}
+
+input[type=text] {
+  width: auto;
+}
+
+label {
+  font-size: medium;
+  font-family: 'Courier New', Courier, monospace;
+}

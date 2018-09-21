@@ -26,7 +26,7 @@ class App extends Component {
           <Route exact path="/" component={PostsContainer} />
           <Route exact path="/about" component={About} />
           <Route exact path="/login" component={Login} />
-          <small><a href="/about">About</a> | <a href="/">Home</a> | <a href="/login">Login</a></small>
+          <footer><a href="/about">About</a> | <a href="/">Home</a> | <a href="/login">Login</a></footer>
         </div>
       </div>
     );

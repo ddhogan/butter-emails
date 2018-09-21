@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import * as actions from '../../actions/postActions';
 import { bindActionCreators } from 'redux';
+import {Button, Icon} from 'react-materialize';
+import '../../css/PostInput.css';
 
 class PostInput extends Component {
   constructor() {
@@ -31,7 +33,10 @@ class PostInput extends Component {
             value={this.state.content}
             onChange={(event) => this.handleChange(event)} 
           />
-          <input type="submit" />
+          <Button waves='light' type="submit">
+            <Icon>send</Icon>
+          </Button>
+          {/* <input type="submit" /> */}
         </form>
       </div>
     )
