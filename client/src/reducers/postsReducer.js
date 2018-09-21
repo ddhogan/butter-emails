@@ -19,8 +19,14 @@ export default function postsReducer(state = {
     case "FETCH_POSTS":
       return { loading: false, posts: action.payload };
     
-    // case "EDIT_POST":
-    //   return {  };
+    case "EDIT_POST":
+      return { posts: state.posts.map((post) => {
+        if (post.id === action.payload.post.id) {
+          return {
+            ...post, content: action.payload.newContent
+          }
+        }
+      }) };
     
     default:
       return state;

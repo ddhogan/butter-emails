@@ -41,6 +41,6 @@ export function editPost(postId, newContent) {
       body: JSON.stringify({'post': {content: newContent, id: postId}}),
     })
     .then(response => response.json())
-    .then(post => dispatch({ type: "EDIT_POST", payload: post}))
+    .then(post => dispatch({ type: "EDIT_POST", payload: (post)}))
   }
 }

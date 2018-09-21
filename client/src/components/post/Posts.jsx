@@ -11,7 +11,8 @@ class Posts extends Component {
         <Post 
         key={post.id}
         post={post}
-        deletePost={this.props.deletePost} />
+        deletePost={this.props.deletePost}
+        editPost={this.props.editPost} />
       )
     });
 
