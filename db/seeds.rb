@@ -8,4 +8,7 @@
 
 post = Post.create({ content: 'this is the very first post!' })
 
-user = User.create(username: 'borpo', password_digest: BCrypt::Password.create('cilantro'), posts: [{content: 'borpo will destroy you'}])
+borpo = User.create(username: 'borpo', password_digest: BCrypt::Password.create('password'))
+borpo.save
+
+Post.create(content: 'borpo will destroy you', user: borpo)
