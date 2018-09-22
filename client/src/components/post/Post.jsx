@@ -16,6 +16,7 @@ class Post extends Component {
         <p>Post #{this.props.post.id}: {this.props.post.content}  
         <button onClick={this.handleDeleteOnClick}>X </button>
         <button onClick={this.handleEditOnClick}>Edit </button></p>
+        <small>By user ID: {this.props.post.user_id}</small>
       </div>
     )
   }
