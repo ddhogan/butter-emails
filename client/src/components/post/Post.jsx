@@ -1,25 +1,22 @@
-import React, { Component } from 'react';
+import React from 'react';
 import '../../css/Post.css';
 
-class Post extends Component {
+const Post = (props) => {  
+  const handleDeleteOnClick = () => {
+    props.deletePost(props.post.id)
+  }
+  const handleEditOnClick = () => {
+    props.editPost(props.post.id)
+  }
   
-  handleDeleteOnClick = () => {
-    this.props.deletePost(this.props.post.id)
-  }
-  handleEditOnClick = () => {
-    this.props.editPost(this.props.post.id)
-  }
-  
-  render () {
-    return (
-      <div className="post">
-        <p>Post #{this.props.post.id}: {this.props.post.content}  
-        <button onClick={this.handleDeleteOnClick}>X </button>
-        <button onClick={this.handleEditOnClick}>Edit </button></p>
-        <small>By user ID: {this.props.post.user_id}</small>
-      </div>
-    )
-  }
+  return (
+    <div className="post">
+      <p>Post #{props.post.id}: {props.post.content}  
+      <button onClick={handleDeleteOnClick}>X </button>
+      <button onClick={handleEditOnClick}>Edit </button></p>
+      <small>By user ID: {props.post.user_id}</small>
+    </div>
+  )
 }
 
 export default Post;
