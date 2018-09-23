@@ -3,8 +3,8 @@ import Post from './Post';
 import '../../css/Posts.css';
 
 const Posts = (props) => {
-  const { posts } = props.posts;
-  const postList = posts.map(post =>{
+  // const { posts } = props.posts;
+  const postList = props.posts.posts.map(post =>{
     return (
       <Post 
       key={post.id}
