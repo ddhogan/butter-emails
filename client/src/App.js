@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Route } from 'react-router-dom';
-import { connect } from 'react-redux';
-import { fetchPosts } from './actions/postActions'
+// import { connect } from 'react-redux';
+// import { fetchPosts } from './actions/postActions'
 import About from './components/About';
 import Login from './components/Login';
 import PostsContainer from './components/post/PostsContainer';
@@ -11,9 +11,9 @@ import './css/App.css';
 
 class App extends Component {
   
-  componentDidMount() {
-    this.props.fetchPosts();
-  }
+  // componentDidMount() {
+  //   this.props.fetchPosts();
+  // }
   
   render() {
     return (
@@ -35,4 +35,5 @@ class App extends Component {
   }
 }
 
-export default connect(null, { fetchPosts })(App);
+// export default connect(null, { fetchPosts })(App);
+export default App;
