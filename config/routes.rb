@@ -3,5 +3,14 @@ Rails.application.routes.draw do
   
   root to: 'application#index'
   resources :posts
+  
+  # login_path
+  post '/login' => 'users#login'
+
+  #signup_path
+  post 'signup' => 'users#create'
+
+  #logout_path
+  post '/logout' => 'users#logout'
 
 end
