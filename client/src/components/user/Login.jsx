@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { createUser, loginUser, logoutUser } from '../..actions/userActions';
-import '../css/Login.css';
+// import { createUser, loginUser, logoutUser } from '../actions/userActions';
+import '../../css/Login.css';
 
-class LoginContainer extends Component {
+class Login extends Component {
   constructor() {
     super()
     this.state = {
@@ -55,4 +55,4 @@ const mapDispatchToProps = dispatch => ({
   
 })
 
-export default (mapStateToProps, mapDispatchToProps)(LoginContainer);
+export default (mapStateToProps, mapDispatchToProps)(Login);
