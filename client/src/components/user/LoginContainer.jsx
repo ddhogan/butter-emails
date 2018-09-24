@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import { createUser, loginUser, logoutUser } from '../..actions/userActions';
 import '../css/Login.css';
 
 class LoginContainer extends Component {
@@ -47,4 +49,10 @@ class LoginContainer extends Component {
   }
 }
 
-export default LoginContainer;
+const mapStateToProps = state => ({ users: state.users });
+
+const mapDispatchToProps = dispatch => ({
+  
+})
+
+export default (mapStateToProps, mapDispatchToProps)(LoginContainer);
