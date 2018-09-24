@@ -5,7 +5,7 @@
 - [X] ~~*Use the `create-react-app` generator to start your project.*~~
   - [X] ~~*Follow the instructions on this repo to setup the generator: [create-react-app](https://github.com/facebookincubator/create-react-app)*~~
 - [X] ~~*Your app should have one HTML page to render your react-redux application*~~
-- [ ] **2 container components** ( PostsContainer)
+- [X] ~~*2 container components*~~ ( PostsContainer, Login, and PostInput)
 - [X] ~~*5 stateless components*~~ ( App, Posts, Post, About, Header)
 - [X] ~~*Use Redux middleware to respond to and modify state change*~~
 - [X] ~~*The Application must make use of `react-router` and proper RESTful routing (should you choose to use react-router v3 please refer to the appropriate [docs](https://github.com/ReactTraining/react-router/tree/v3/docs); docs for v4 can be found [here](https://reacttraining.com/react-router/web/guides/quick-start))*~~
