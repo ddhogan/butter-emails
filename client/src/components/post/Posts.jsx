@@ -3,7 +3,6 @@ import Post from './Post';
 import '../../css/Posts.css';
 
 const Posts = (props) => {
-  // const { posts } = props.posts;
   const postList = props.posts.posts.map(post =>{
     return (
       <Post 
