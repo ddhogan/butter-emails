@@ -10,3 +10,7 @@ div.post {
   margin: 10px;
   /* display: flex; */
 }
+
+.post small {
+  float: left;
+}

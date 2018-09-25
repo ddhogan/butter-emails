@@ -11,10 +11,10 @@ const Post = (props) => {
   
   return (
     <div className="post">
+      <small>{props.post.user.username} writes: </small>
       <p>Post #{props.post.id}: {props.post.content}  
       <button onClick={handleDeleteOnClick}>X </button>
       <button onClick={handleEditOnClick}>Edit </button></p>
-      <small>By user ID: {props.post.user_id}</small>
     </div>
   )
 }
