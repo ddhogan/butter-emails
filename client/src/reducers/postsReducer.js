@@ -16,13 +16,15 @@ export default function postsReducer(state = {
       return { loading: false, posts: action.payload };
     
     case "EDIT_POST":
-        return { posts: state.posts.map((post) => {
-          if (post.id === action.payload.id) {
-            return {
-              ...post, content: action.payload.content
-            }
-          }
-      }) };
+      //   return { posts: state.posts.map((post) => {
+      //     if (post.id === action.payload.id) {
+      //       return {
+      //         ...state, content: action.payload.content
+      //       }
+      //     }
+      // }) };
+      return state;
+      // this method needs work.. maybe use find() instead of map, and then just change its content without changing its id?
     
     default:
       return state;
