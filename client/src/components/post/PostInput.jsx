@@ -43,7 +43,7 @@ const mapDispatchToProps = (dispatch) => {
   return { actions: bindActionCreators(actions, dispatch)}
 }
 const mapStateToProps = (state) => {
-  return { posts: state.posts.posts.content }
+  return { posts: state.posts.posts }
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(PostInput);

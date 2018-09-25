@@ -20,9 +20,7 @@ class PostEdit extends Component {
 
   handleSubmit = event => {
     event.preventDefault();
-    const newContent = this.content.value;
-    // this.props.actions.editPost(this.state);
-    this.props.dispatch({ type: "EDIT_POST", id: this.state.post.id, content: newContent })
+    this.props.actions.editPost(this.state);
   }
 
   render () {
@@ -33,7 +31,7 @@ class PostEdit extends Component {
           <input 
             type="text"
             name="content"
-            value={this.state.content}
+            value={this.props.content}
             onChange={(event) => this.handleChange(event)}
           />
           <input type="submit">Submit Edit</input>
@@ -44,7 +42,7 @@ class PostEdit extends Component {
 }
 
 const mapStateToProps = (state) => {
-  return { posts: state.posts.posts.content }
+  return { posts: state.posts.posts }
 }
 const mapDispatchToProps = (dispatch) => {
   return { actions: bindActionCreators(actions, dispatch)}

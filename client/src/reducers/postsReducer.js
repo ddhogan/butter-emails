@@ -17,11 +17,11 @@ export default function postsReducer(state = {
     
     case "EDIT_POST":
         return { posts: state.posts.map((post) => {
-        if (post.id === action.payload.id) {
-          return {
-            ...post, content: action.payload.content
+          if (post.id === action.payload.id) {
+            return {
+              ...post, content: action.payload.content
+            }
           }
-        }
       }) };
     
     default:
