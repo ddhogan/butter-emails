@@ -4,10 +4,6 @@ export default function postsReducer(state = {
   switch(action.type){
     
     case "CREATE_POST":
-      // const post = {
-        // id: Math.floor(Math.random()*1000),
-        // content: action.content
-      // }
       return { ...state, posts: [...state.posts, action.payload] }
     
     case "DELETE_POST":

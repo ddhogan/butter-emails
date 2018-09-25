@@ -7,7 +7,7 @@ class PostsController < ApplicationController
   def create
     @post = Post.new(post_params)
     if @post.save
-      render json: @post
+      render :json => @post, :include => :user
     else
       render json: { message: @post.errors }, status: :unprocessable_entity
     end
@@ -16,7 +16,7 @@ class PostsController < ApplicationController
   def update
     @post = Post.find_by(id: params[:id])
     if @post.update(post_params)
-      render json: @post
+      render :json => @post, :include => :user
     else
       render json: { message: @post.errors}, status: :unprocessable_entity 
     end
