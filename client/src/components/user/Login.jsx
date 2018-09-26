@@ -40,7 +40,7 @@ class Login extends Component {
           <button type="submit">Log In</button>
         </form>
         <ul>
-          <li>Need to add a signup route and Component</li>
+          <li><a href="/signup">Sign Up</a></li>
           <li>OAuth (maybe twitter?)</li>
           <li>Maybe <a href="https://openid.net/connect/">OpenID</a>, because OAuth is <a href="https://oauth.net/articles/authentication/">annoying.</a></li>
         </ul>
