@@ -1,11 +1,12 @@
 import fetch from 'isomorphic-fetch';
+import * as actionTypes from './actionTypes'
 
 export function fetchPosts () {
   return (dispatch) => {
-    dispatch({ type: "LOADING_POSTS" });
+    dispatch({ type: actionTypes.LOADING_POSTS });
     return fetch('/posts')
       .then(response => response.json())
-      .then(posts => dispatch({ type: "FETCH_POSTS", payload: posts }));
+      .then(posts => dispatch({ type: actionTypes.FETCH_POSTS, payload: posts }));
   };
 };
 
@@ -17,7 +18,7 @@ export function createPost (post) {
       body: JSON.stringify(post),
     })
     .then(response => response.json())
-    .then(data => dispatch({ type: "CREATE_POST", payload: data }))
+    .then(data => dispatch({ type: actionTypes.CREATE_POST, payload: data }))
   };
 };
 
@@ -29,7 +30,7 @@ export function deletePost(postId) {
       body: JSON.stringify({'post': {id: postId}}),
     })
     .then(response => response.json())
-    .then(post => dispatch({ type: "DELETE_POST", payload: post }))
+    .then(post => dispatch({ type: actionTypes.DELETE_POST, payload: post }))
   };
 };
 
@@ -42,6 +43,6 @@ export function editPost(postId, newContent) {
       body: JSON.stringify({post: post}),
     })
     .then(response => response.json())
-    .then(post => dispatch({ type: "EDIT_POST", payload: (post)}))
+    .then(post => dispatch({ type: actionTypes.EDIT_POST, payload: (post)}))
   }
 }

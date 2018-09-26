@@ -1,4 +1,5 @@
 import fetch from 'isomorphic-fetch';
+import * as actionTypes from './actionTypes'
 
 export function createUser (username, password) {
   return (dispatch) => {
@@ -8,20 +9,20 @@ export function createUser (username, password) {
       body: JSON.stringify(username, password),
     })
     .then(res => res.json())
-    .then(data => dispatch({ type: "CREATE_USER", payload: data }))
+    .then(data => dispatch({ type: actionTypes.CREATE_USER, payload: data }))
   }
 }
 
 export function loginUser (username, password) {
   return (dispatch) => {
-    dispatch({ type: "LOGGING_IN" });
+    dispatch({ type: actionTypes.LOGGING_IN });
     return fetch('/login', {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(username, password),
     })
     .then(response => response.json())
-    .then(data => dispatch({ type: "LOGIN_USER", payload: data }))
+    .then(data => dispatch({ type: actionTypes.LOGIN_USER, payload: data }))
   };
 };
 
@@ -33,6 +34,6 @@ export function logoutUser (user) {
       body: JSON.stringify(user),
     })
     .then(res => res.json())
-    .then(data => dispatch({ type: LOGOUT_USER, payload: data }))
+    .then(data => dispatch({ type: actionTypes.LOGOUT_USER, payload: data }))
   }
 }
