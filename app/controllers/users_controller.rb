@@ -12,6 +12,10 @@ class UsersController < ApplicationController
       render json: @errors
     end
    end
+  
+  def show
+    render :json => @user, :include => :posts
+  end
    
   def create
     @user = User.new(user_params)

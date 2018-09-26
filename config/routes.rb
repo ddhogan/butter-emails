@@ -7,13 +7,9 @@ Rails.application.routes.draw do
   post 'user_token' => 'token#create'
   post 'find_user' => 'users#find'
 
-  # login_path
-  post '/login' => 'users#login'
-
   #signup_path
-  post 'signup' => 'users#create'
+  # post 'signup' => 'users#create'
 
-  #logout_path
-  post '/logout' => 'users#logout'
+  get '/users' => 'users#show'
 
 end
