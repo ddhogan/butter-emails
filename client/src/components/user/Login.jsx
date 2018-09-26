@@ -23,8 +23,8 @@ class Login extends Component {
   handleSubmit = event => {
     event.preventDefault();
     if (this.props.authenticate(this.state)) {
-      this.props.history.push('/user_profile') // this is like a redirect, we probably don't actually want this
-      this.props.history.push('/');
+      // this.props.history.push('/user_profile') // this is like a redirect, we probably don't actually want this
+      // this.props.history.push('/');
       window.alert("You logged in!")
     } else {
       window.alert("Sorry, something went wrong, please try again.")
