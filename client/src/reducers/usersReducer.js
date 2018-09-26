@@ -8,16 +8,30 @@ export default function usersReducer(state = {
   switch(action.type){
     
     case actionTypes.CREATE_USER:
-      return { ...state, users: [...state.users, action.payload] }
+      return {
+        ...state, 
+        users: [...state.users, action.payload]
+      }
     
     case actionTypes.LOGGING_IN:
-      return { ...state, loading: true, current_user: ''};
+      return {
+        ...state,
+        loading: true, 
+        current_user: ''
+      };
     
     case actionTypes.LOGIN_USER:
-      return { ...state, loading: false, current_user: action.payload };
+      return { 
+        ...state,
+        loading: false, 
+        current_user: action.payload
+      };
 
     case actionTypes.LOGOUT_USER:
-      return { ...state, current_user: '' }
+      return { 
+      ...state, 
+      current_user: '' 
+    }
     
     default:
       return state;
