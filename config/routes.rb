@@ -4,6 +4,9 @@ Rails.application.routes.draw do
   root to: 'application#index'
   resources :posts
   
+  post 'user_token' => 'token#create'
+  post 'find_user' => 'users#find'
+
   # login_path
   post '/login' => 'users#login'
 
