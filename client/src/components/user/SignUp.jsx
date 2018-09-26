@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import { signup } from '../../actions/authActions';
 import '../../css/Login.css';
 
 class SignUp extends Component {
@@ -32,7 +33,7 @@ class SignUp extends Component {
       <div className="login">
         <h2>Sign Up</h2>
         <form onSubmit={this.handleSubmit}>
-          {/* <label>Username: </label> */}
+          <label>Username: </label>
           <input
             label="Username:"
             type="text"
@@ -40,7 +41,8 @@ class SignUp extends Component {
             placeholder="Username"
             value={this.state.username}
             onChange={this.handleChange} />
-          {/* <label>Email: </label> */}
+          <br />
+          <label>Email: </label>
           <input 
             label="Email:"
             type="text"
@@ -48,6 +50,7 @@ class SignUp extends Component {
             placeholder="Email"
             value={this.state.email}
             onChange={this.handleChange} />
+          <br />
           <label>Password</label>
           <input 
             label="Password:"
@@ -56,6 +59,7 @@ class SignUp extends Component {
             placeholder="Password"
             value={this.state.password}
             onChange={this.handleChange} />
+          <br />
           <button type="submit" value="Sign Up">Sign Up</button>
           <p>Already have an account? <a href="/login">Log In</a></p>
         </form>
@@ -65,4 +69,4 @@ class SignUp extends Component {
 
 }
 
-export default SignUp;
+export default connect(null, {signup})(SignUp);

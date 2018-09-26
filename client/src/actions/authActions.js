@@ -1,5 +1,5 @@
 import fetch from 'isomorphic-fetch';
-import { API_URL } from './apiUrl'
+import { API_URL } from './apiURL'
 import * as actionTypes from './actionTypes'
 
 export const authRequest = () => {
@@ -35,7 +35,7 @@ export const signup = (user) => {
       })
       .then(response => response.json())
       .then(jresp => {
-        dispatch(autheticate({
+        dispatch(authenticate({
           name: newUser.username,
           email: newUser.email,
           password: newUser.password })
