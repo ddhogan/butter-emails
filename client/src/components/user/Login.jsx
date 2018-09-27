@@ -8,7 +8,7 @@ class Login extends Component {
   constructor() {
     super()
     this.state = {
-      // username: '',
+      username: '',
       email: '',
       password: '',
     }
@@ -37,12 +37,12 @@ class Login extends Component {
         <form onSubmit={this.handleSubmit}>
           <label>Email: </label>
           <input 
-          label="Email"
-          type="text"
-          name="email"
-          placeholder="Email"
-          value={this.state.email}
-          onChange={this.handleChange} />
+            label="Email"
+            type="text"
+            name="email"
+            placeholder="Email"
+            value={this.state.email}
+            onChange={this.handleChange} />
           <br/>
           <label>Password: </label>
           <input 

@@ -74,7 +74,7 @@ export const authenticate = (credentials) => {
   }
 }
 
-export const getUser = credentials => {
+export const getUser = (credentials) => {
   const request = new Request(`${API_URL}/find_user`, {
     method: 'POST',
     headers: new Headers({
@@ -85,7 +85,7 @@ export const getUser = credentials => {
   })
   return fetch(request)
     .then(response => response.json())
-    .then(userJson => {return userJson})
+    .then(userJson => { return userJson })
     .catch(error => { return error })
 }
 
