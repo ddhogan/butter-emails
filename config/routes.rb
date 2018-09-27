@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   root to: 'application#index'
   resources :posts
   
-  post 'user_token' => 'token#create'
+  post 'user_token' => 'user_token#create'
   post 'find_user' => 'users#find'
 
   #signup_path

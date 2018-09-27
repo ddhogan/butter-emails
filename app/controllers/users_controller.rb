@@ -4,7 +4,7 @@ class UsersController < ApplicationController
   end
 
   def find
-    @user = User.find_by(email: params[:user][:email])
+    @user = User.find_by(username: params[:user][:username])
     if @user
       render json: @user
     else
@@ -14,6 +14,7 @@ class UsersController < ApplicationController
   end
   
   def show
+    @user = User.find_by(id: params[:id])
     render :json => @user, :include => :posts
   end
    

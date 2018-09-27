@@ -35,7 +35,6 @@ class SignUp extends Component {
         <form onSubmit={this.handleSubmit}>
           <label>Username: </label>
           <input
-            label="Username:"
             type="text"
             name="username"
             placeholder="Username"
@@ -44,7 +43,6 @@ class SignUp extends Component {
           <br />
           <label>Email: </label>
           <input 
-            label="Email:"
             type="text"
             name="email"
             placeholder="Email"
@@ -53,7 +51,6 @@ class SignUp extends Component {
           <br />
           <label>Password</label>
           <input 
-            label="Password:"
             type="password" 
             name="password"
             placeholder="Password"
