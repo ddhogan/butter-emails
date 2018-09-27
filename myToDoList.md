@@ -8,3 +8,4 @@
 * [X] ~~*Styling: do more.*~~
 * [ ] display more useful error messages for login/signup
 * [ ] form validations
+* [ ] log in still broken but doesn't show that it's broken to user (only console)
