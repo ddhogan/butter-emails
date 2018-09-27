@@ -11,7 +11,7 @@ class UsersController < ApplicationController
       @errors = @user.errors.full_messages
       render json: @errors
     end
-   end
+  end
   
   def show
     render :json => @user, :include => :posts
