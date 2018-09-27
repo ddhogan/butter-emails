@@ -53,6 +53,7 @@ export const authenticate = (credentials) => {
     return fetch(`${API_URL}/user_token`, {
       method: 'POST',
       headers: {
+        'Accept': 'application/json',
         'Content-Type': 'application/json'
       },
       body: JSON.stringify({ auth: credentials })
@@ -78,6 +79,7 @@ export const getUser = credentials => {
   const request = new Request(`${API_URL}/find_user`, {
     method: 'POST',
     headers: new Headers({
+      'Accept': 'application/json',
       'Content-Type': 'application/json',
       'Authorization': `Bearer ${localStorage.token}`,
     }),
