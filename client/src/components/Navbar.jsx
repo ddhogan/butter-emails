@@ -11,7 +11,7 @@ class Navbar extends Component {
 
   render() {
     return (
-      <small><a href="/about">About</a> | <a href="/">Home</a> | <a href="/login">Login</a> | <u><a onClick={(e)=> this.handleLogout(e)}>Log Out</a></u></small>
+      <small><a href="/about">About</a> | <a href="/">Home</a> | <a href="/login">Login</a> | <button onClick={(e)=> this.handleLogout(e)}>Log Out</button></small>
     )
     
   }
