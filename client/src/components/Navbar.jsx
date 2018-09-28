@@ -10,13 +10,13 @@ class Navbar extends Component {
   handleLogout = (e) => {
     e.preventDefault();
     this.props.logout();
-    this.props.history.push('/')
+    // this.props.history.push('/')
   }
 
   render() {
     return (
       <div>
-        <small><a href="/about">About</a> | <a href="/">Home</a> | <a href="/login">Login</a> | <button onClick={(e)=> this.handleLogout(e)}>Log Out</button></small> | { (!!this.props.currentUser) ? (<small>Welcome {this.props.currentUser.username}!</small>) : <small>you are not logged in</small>}
+        <small><a href="/about">About</a> | <a href="/">Home</a> | <a href="/login">Login</a> | <button onClick={(e)=> this.handleLogout(e)}>Log Out</button></small> | { (!!this.props.currentUser.username) ? (<small>Welcome {this.props.currentUser.username}!</small>) : <small>you are not logged in</small>}
       </div>
     )
     
