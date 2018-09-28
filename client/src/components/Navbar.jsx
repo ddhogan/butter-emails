@@ -3,9 +3,9 @@ import { connect } from 'react-redux';
 import { logout } from '../actions/authActions';
 
 class Navbar extends Component {
-  constructor(props) {
-    super(props)
-  }
+  // constructor(props) {
+  //   super(props)
+  // }
 
   handleLogout = (e) => {
     e.preventDefault();
