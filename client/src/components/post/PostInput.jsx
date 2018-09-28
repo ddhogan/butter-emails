@@ -17,7 +17,7 @@ class PostInput extends Component {
 
   handleSubmit = event => {
     event.preventDefault();
-    this.props.actions.createPost(this.state);
+    this.props.actions.createPost(this.state.content, this.props.currentUser.id);
     this.setState({ content: '', });
   }
 
@@ -43,7 +43,7 @@ const mapDispatchToProps = (dispatch) => {
   return { actions: bindActionCreators(actions, dispatch)}
 }
 const mapStateToProps = (state) => {
-  return { posts: state.posts.posts }
+  return { posts: state.posts.posts, currentUser: state.auth.currentUser }
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(PostInput);

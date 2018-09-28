@@ -10,12 +10,12 @@ export function fetchPosts () {
   };
 };
 
-export function createPost (post) {
+export function createPost (content, user_id) {
   return (dispatch) => {
     return fetch('/posts', {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(post),
+      body: JSON.stringify({ content, user_id}),
     })
     .then(response => response.json())
     .then(data => dispatch({ type: actionTypes.CREATE_POST, payload: data }))
