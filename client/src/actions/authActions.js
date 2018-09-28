@@ -49,16 +49,15 @@ export const signup = (user) => {
 
 export const authenticate = (credentials) => {
   return dispatch => {
-    dispatch(authRequest());
+    dispatch(authRequest())
+
     return fetch(`${API_URL}/user_token`, {
       method: 'POST',
-      headers: {
-        'Content-Type': 'application/json'
-      },
+      headers: {'Content-Type': 'application/json'},
       body: JSON.stringify({ auth: credentials })
     })
-    .then(res => res.json())
-    .then(response => {
+      .then(res => res.json())
+      .then(response => {
       const token = response.jwt;
       localStorage.setItem('token', token);
       return getUser(credentials)
@@ -68,6 +67,7 @@ export const authenticate = (credentials) => {
       dispatch(authSuccess(user, localStorage.token))
     })
     .catch((errors) => {
+      console.log(errors);
       dispatch(authFailure(errors))
       localStorage.clear()
     })
@@ -86,7 +86,7 @@ export const getUser = (credentials) => {
   return fetch(request)
     .then(response => response.json())
     .then(userJson => { return userJson })
-    .catch(error => { return error })
+    .catch(error => { return error });
 }
 
 export const logout = () => {

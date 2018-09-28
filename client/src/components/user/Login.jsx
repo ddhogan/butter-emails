@@ -1,13 +1,13 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import { withRouter } from 'react-router-dom';
 import { authenticate } from '../../actions/authActions';
 import '../../css/Login.css';
 
 class Login extends Component {
-  constructor() {
-    super()
+  constructor(props) {
+    super(props)
     this.state = {
-      username: '',
       email: '',
       password: '',
     }
@@ -26,6 +26,7 @@ class Login extends Component {
       window.alert("You logged in!")
     } else {
       window.alert("Sorry, something went wrong, please try again.")
+      this.props.history.push('/login');
     }
   }
   
@@ -36,23 +37,21 @@ class Login extends Component {
         <form onSubmit={this.handleSubmit}>
           <label>Email: </label>
           <input 
-            label="Email"
-            type="text"
+            type="email"
             name="email"
             placeholder="Email"
             value={this.state.email}
             onChange={this.handleChange} />
           <br/>
           <label>Password: </label>
-          <input 
-            label="Password"
+          <input
             type="password" 
             name="password"
             placeholder="Password"
             value={this.state.password}
             onChange={this.handleChange} />
           <br/>
-          <button type="submit" value="Login">Log In</button>
+          <input type="submit" value="Login" />
         </form>
         <hr />
         <br />
@@ -63,4 +62,4 @@ class Login extends Component {
 }
 
 
-export default connect(null, {authenticate})(Login);
+export default Login = withRouter(connect(null, {authenticate})(Login));
