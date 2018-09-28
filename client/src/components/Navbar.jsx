@@ -16,13 +16,13 @@ class Navbar extends Component {
   render() {
     return (
       <div>
-        <small><a href="/about">About</a> | <a href="/">Home</a> | <a href="/login">Login</a> | <button onClick={(e)=> this.handleLogout(e)}>Log Out</button></small> | { (!!this.props.current_user.username) ? (<small>Welcome {this.props.current_user.username}!</small>) : <small>you are not logged in</small>}
+        <small><a href="/about">About</a> | <a href="/">Home</a> | <a href="/login">Login</a> | <button onClick={(e)=> this.handleLogout(e)}>Log Out</button></small> | { (!!this.props.currentUser) ? (<small>Welcome {this.props.currentUser.username}!</small>) : <small>you are not logged in</small>}
       </div>
     )
     
   }
 }
 
-const mapStateToProps = state => ({ current_user: state.users.current_user });
+const mapStateToProps = state => ({ currentUser: state.auth.currentUser });
 
 export default connect(mapStateToProps, {logout})(Navbar)
