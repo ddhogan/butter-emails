@@ -1,4 +1,5 @@
 class PostsController < ApplicationController
+  before_action :set_post, only: [:update, :destroy]
   
   def index
     render :json => Post.all, :include => :user
@@ -14,7 +15,6 @@ class PostsController < ApplicationController
   end
 
   def update
-    @post = Post.find_by(id: params[:id])
     if @post.update(post_params)
       render :json => @post, :include => :user
     else
@@ -23,7 +23,6 @@ class PostsController < ApplicationController
   end
 
   def destroy
-    @post = Post.find_by(id: params[:id])
     if @post.destroy
       render json: @post.as_json(only: [:id])
     else
@@ -33,6 +32,10 @@ class PostsController < ApplicationController
 
   private
 
+  def set_post
+    @post = Post.find_by(id: params[:id])
+  end
+  
   def post_params
     params.require(:post).permit(:content, :user_id)
   end
