@@ -1,30 +1,35 @@
-import React from 'react';
+import React, {Component}  from 'react';
+import { connect } from 'react-redux';
 import '../../css/Post.css';
 import dateFormat from 'dateformat';
 
-const Post = (props) => {  
+class Post extends Component {  
   
-  const handleDeleteOnClick = () => {
-    props.deletePost(props.post.id)
+  handleDeleteOnClick = () => {
+    this.props.deletePost(this.props.post.id)
   }
-  const handleEditOnClick = () => {
-    props.editPost(props.post.id)
+  handleEditOnClick = () => {
+    this.props.editPost(this.props.post.id)
   }
   
-  return (
-    <div className="post">
-      <small>{props.post.user.username} writes: </small>
-      <p>{props.post.content}  
-      { props.isAuthenticated ? 
-        <React.Fragment>
-          <button onClick={handleDeleteOnClick}>X </button>
-          <button onClick={handleEditOnClick}>Edit </button>
+  render() {
+    return (
+      <div className="post">
+        <small>{this.props.post.user.username} writes: </small>
+        <p>{this.props.post.content}  
+        { this.props.auth.isAuthenticated ? 
+          <React.Fragment>
+            <button onClick={this.handleDeleteOnClick}>X </button>
+            <button onClick={this.handleEditOnClick}>Edit </button>
           </React.Fragment>
-       : null}
-       </p>
-      <small>{dateFormat(props.post.created_at)}, Post ID {props.post.id}</small>
-    </div>
-  )
+        : null}
+        </p>
+        <small>{dateFormat(this.props.post.created_at)}, Post ID {this.props.post.id}</small>
+      </div>
+    )
+  }
 }
 
-export default Post;
+const mapStateToProps = state => ({ auth: state.auth });
+
+export default connect(mapStateToProps, null)(Post);
