@@ -1,5 +1,6 @@
 import React from 'react';
 import '../../css/Post.css';
+import dateFormat from 'dateformat';
 
 const Post = (props) => {  
   const handleDeleteOnClick = () => {
@@ -12,9 +13,10 @@ const Post = (props) => {
   return (
     <div className="post">
       <small>{props.post.user.username} writes: </small>
-      <p>Post #{props.post.id}: {props.post.content}  
+      <p>{props.post.content}  
       <button onClick={handleDeleteOnClick}>X </button>
       <button onClick={handleEditOnClick}>Edit </button></p>
+      <small>{dateFormat(props.post.created_at)}, Post ID {props.post.id}</small>
     </div>
   )
 }
