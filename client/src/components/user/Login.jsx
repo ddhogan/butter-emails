@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-// import { createUser, loginUser, logoutUser } from '../actions/userActions';
 import { authenticate } from '../../actions/authActions';
 import '../../css/Login.css';
 
@@ -58,10 +57,6 @@ class Login extends Component {
         <hr />
         <br />
         <h3>Or <a href="/signup">Sign Up</a> here!</h3>
-        <ul> Other thoughts...
-          <li>OAuth (maybe twitter?)</li>
-          <li>Maybe <a href="https://openid.net/connect/">OpenID</a>, because OAuth is <a href="https://oauth.net/articles/authentication/">annoying.</a></li>
-        </ul>
       </div>
     )
   }
