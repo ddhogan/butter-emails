@@ -1,11 +1,20 @@
-# personal to do list:
+# To do list
 
+* [ ] log in seems to... always work?
+* [ ] form validations
 * [ ] finish enabling **edit/update** for posts
-* [ ] add users! the whole API resource (model, controller, and components)
-  * [ ] restrictions for editing/deleting only your own posts
-  * [ ] more info in post cards so it shows who posted it and when
+* [ ] restrictions for editing/deleting only your own posts (the post.user_id must match the currentUser.userid)
+* [ ] display more useful error messages for login/signup
+
+
+Completed:
+
+* [X] ~~*more info in post cards so it shows who posted it and when*~~
 * [X] ~~*See note in index.js about making a separate Navbar component and moving the routes out of App and into the index component*~~
 * [X] ~~*Styling: do more.*~~
-* [ ] display more useful error messages for login/signup
-* [ ] form validations
-* [ ] log in still broken but doesn't show that it's broken to user (only console)
+
+
+## Other thoughts...
+
+* [ ] OAuth (maybe twitter?)
+* [ ] Maybe [OpenID](https://openid.net/connect/), because OAuth is [annoying](https://oauth.net/articles/authentication/).
