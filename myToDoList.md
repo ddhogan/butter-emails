@@ -1,10 +1,11 @@
 # To do list
 
-* [ ] log in seems to... always work?
-* [ ] form validations
 * [ ] finish enabling **edit/update** for posts
-* [ ] restrictions for editing/deleting only your own posts (the post.user_id must match the currentUser.userid)
+* [ ] log in seems to... always work?
 * [ ] display more useful error messages for login/signup
+* [ ] form validations
+* [ ] restrictions for editing/deleting only your own posts (the post.user_id must match the currentUser.userid)
+
 
 ## Other thoughts...
 
