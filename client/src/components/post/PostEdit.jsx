@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import * as actions from '../../actions/postActions';
-import { bindActionCreators } from 'redux';
+// import * as actions from '../../actions/postActions';
+// import { bindActionCreators } from 'redux';
 import '../../css/PostInput.css';
 
 class PostEdit extends Component {
@@ -20,7 +20,7 @@ class PostEdit extends Component {
 
   handleSubmit = event => {
     event.preventDefault();
-    this.props.actions.editPost(this.state);
+    this.props.editPost(this.state);
   }
 
   render () {
@@ -44,8 +44,8 @@ class PostEdit extends Component {
 const mapStateToProps = (state) => {
   return { posts: state.posts.posts }
 }
-const mapDispatchToProps = (dispatch) => {
-  return { actions: bindActionCreators(actions, dispatch)}
-}
+// const mapDispatchToProps = (dispatch) => {
+//   // return { actions: bindActionCreators(actions, dispatch)}
+// }
 
-export default connect(mapStateToProps, mapDispatchToProps)(PostEdit);
+export default connect(mapStateToProps, null)(PostEdit);
