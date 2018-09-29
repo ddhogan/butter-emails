@@ -3,9 +3,6 @@
 * [ ] finish enabling **edit/update** for posts
 * [ ] log in seems to... always work?
 * [ ] display more useful error messages for login/signup
-* [ ] form validations
-* [ ] restrictions for editing/deleting only your own posts (the post.user_id must match the currentUser.userid)
-
 
 ## Other thoughts...
 
