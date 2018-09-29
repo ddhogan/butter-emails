@@ -34,16 +34,15 @@ export function deletePost(postId) {
   };
 };
 
-export function editPost(postId, newContent) {
+export function editPost(postId, content) {
   return (dispatch) => {
     dispatch({ type: actionTypes.EDIT_POST });
-    const post = { 'post': {content: newContent, id: postId} }
     return fetch(`/posts/${postId}`, {
       method: 'PATCH',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({post: post}),
+      body: JSON.stringify({ 'post': {content: content} }),
     })
     .then(response => response.json())
-    .then(post => dispatch({ type: actionTypes.UPDATE_POST, payload: (post)}))
-  }
-}
+    .then(post => dispatch({ type: actionTypes.UPDATE_POST, payload: post }))
+  };
+};

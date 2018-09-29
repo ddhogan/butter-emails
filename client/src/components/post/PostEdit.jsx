@@ -20,7 +20,7 @@ class PostEdit extends Component {
 
   handleSubmit = event => {
     event.preventDefault();
-    this.props.actions.updatePost(this.state);
+    this.props.actions.editPost(this.state);
   }
 
   render () {
