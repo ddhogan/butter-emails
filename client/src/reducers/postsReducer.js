@@ -17,11 +17,16 @@ export default function postsReducer(state = {
     case actionTypes.DELETE_POST:
       return { ...state, posts: state.posts.filter(post => post.id !== action.payload.id) }
     
-    // first, change the posts editing state to true)
-    // then re-render the page but replace the relevant post component with the postInput
+
     case actionTypes.EDIT_POST:
-      return { ...state, posts: state.posts.map(post => post.id === action.payload.id ? { ...post, editing: true} : post) }
-    
+      return state.posts.map((post) => {
+        if (post.id === action.payload.id) {
+          return { ...post, editing: true,} 
+        }
+         else return { ...post, editing: false, }
+        }
+      )
+        
     case actionTypes.UPDATE_POST:
       return state.posts.map((post) => {
         if (post.id === action.payload.id) {

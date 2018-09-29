@@ -1,10 +1,11 @@
 import React, {Component}  from 'react';
 import { connect } from 'react-redux';
+import { editPost } from '../../actions/postActions';
 import '../../css/Post.css';
 import dateFormat from 'dateformat';
 
-class Post extends Component {  
-  
+class Post extends Component {
+
   handleDeleteOnClick = () => {
     this.props.deletePost(this.props.post.id)
   }
@@ -29,8 +30,8 @@ class Post extends Component {
   }
 }
 
-const mapStateToProps = state => ({ auth: state.auth });
+const mapStateToProps = state => ({ auth: state.auth, });
 
-export default connect(mapStateToProps, null)(Post);
+export default connect(mapStateToProps, {editPost})(Post);
 
 // this.props.auth.isAuthenticated
