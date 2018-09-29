@@ -2,7 +2,6 @@ import React from 'react';
 import Post from './Post';
 import '../../css/Posts.css';
 import PostEdit from './PostEdit';
-// import PostInput from './PostInput';
 
 const Posts = (props) => {
   const postList = props.posts.posts.map(post =>{
