@@ -34,8 +34,9 @@ export function deletePost(postId) {
   };
 };
 
-export function updatePost(postId, newContent) {
+export function editPost(postId, newContent) {
   return (dispatch) => {
+    dispatch({ type: actionTypes.EDIT_POST });
     const post = { 'post': {content: newContent, id: postId} }
     return fetch(`/posts/${postId}`, {
       method: 'PATCH',
@@ -43,6 +44,6 @@ export function updatePost(postId, newContent) {
       body: JSON.stringify({post: post}),
     })
     .then(response => response.json())
-    .then(post => dispatch({ type: actionTypes.EDIT_POST, payload: (post)}))
+    .then(post => dispatch({ type: actionTypes.UPDATE_POST, payload: (post)}))
   }
 }
