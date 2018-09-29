@@ -6,7 +6,7 @@ export default function postsReducer(state = {
   switch(action.type){
     
     case actionTypes.LOADING_POSTS:
-      return { ...state, loading: true, posts: [] };
+      return { ...state, loading: true, posts: [] }; //maybe an editing status needs to be introduced here?
     
     case actionTypes.FETCH_POSTS:
       return { ...state, loading: false, posts: action.payload };
