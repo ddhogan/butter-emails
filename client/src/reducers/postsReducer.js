@@ -18,13 +18,20 @@ export default function postsReducer(state = {
       return { ...state, loading: false, posts: action.payload };
     
     case actionTypes.EDIT_POST:
-    // this method needs work...
-        return { ...state, posts: state.posts.map((post) => {
-          if (post.id !== action.payload.id) {
-            return post
+      return state.posts.map((post) => post.id === action.payload.id ? { ...post, editing: true} : post
+    // first, change the posts editing state to true)
+    // then re-render the page but replace the relevant post component with the postInput
+    
+    case actionTypes.UPDATE_POST:
+      return state.posts.map((post) => {
+        if (post.id === action.payload.id) {
+          return {
+            ...post,
+            content: action.payload.content,
+            editing: false,
           }
-          return {...state, post: action.payload.content} 
-        }) };
+        } else return post;
+      })
         
     default:
       return state;

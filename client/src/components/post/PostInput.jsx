@@ -7,7 +7,10 @@ import '../../css/PostInput.css';
 class PostInput extends Component {
   constructor() {
     super();
-    this.state = { content: '',};
+    this.state = { 
+      content: '',
+      editing: false,
+    };
   }
 
   handleChange(event) {
@@ -27,8 +30,10 @@ class PostInput extends Component {
         <form onSubmit={(event) => this.handleSubmit(event)}>
           <label>Create Post: </label>
           <input 
+            required
             type="text"
             name="content"
+            placeholder="What's happening?"
             value={this.state.content}
             onChange={(event) => this.handleChange(event)} 
           />

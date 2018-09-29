@@ -34,7 +34,7 @@ export function deletePost(postId) {
   };
 };
 
-export function editPost(postId, newContent) {
+export function updatePost(postId, newContent) {
   return (dispatch) => {
     const post = { 'post': {content: newContent, id: postId} }
     return fetch(`/posts/${postId}`, {
