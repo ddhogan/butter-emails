@@ -9,7 +9,6 @@ class PostInput extends Component {
     super();
     this.state = { 
       content: '',
-      // editing: false,
     };
   }
 

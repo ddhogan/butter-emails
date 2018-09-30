@@ -9,7 +9,6 @@ class PostEdit extends Component {
     this.state = {
       content: this.props.content,
       id: props.match.params,
-      // editing: true
     }
   }
 
@@ -20,11 +19,11 @@ class PostEdit extends Component {
 
   handleSubmit = event => {
     event.preventDefault();
-    this.props.updatePost(this.state);
+    this.props.updatePost(this.state.id, this.state.content);
   }
 
   render () {
-    // console.log("this got hit!")
+    // console.log("this page rendered!")
     return (
       <div>
         <form onSubmit={this.handleSubmit}>
@@ -46,4 +45,8 @@ const mapStateToProps = (state) => {
   return { posts: state.posts.posts }
 }
 
-export default connect(mapStateToProps, {updatePost})(PostEdit);
+const mapDispatchToProps = dispatch => ({
+  updatePost: (postId, content) => dispatch(updatePost(postId, content))
+})
+
+export default connect(mapStateToProps, mapDispatchToProps)(PostEdit);

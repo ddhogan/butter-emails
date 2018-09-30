@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import Posts from './Posts';
 import PostInput from './PostInput';
-import { deletePost, createPost, updatePost, fetchPosts } from '../../actions/postActions';
+import { deletePost, createPost, fetchPosts } from '../../actions/postActions';
 import '../../css/PostsContainer.css';
 
 class PostsContainer extends Component {
@@ -26,7 +26,6 @@ const mapDispatchToProps = dispatch => ({
   fetchPosts: () => dispatch(fetchPosts()),
   createPost: post => dispatch(createPost(post)),
   deletePost: postId => dispatch(deletePost(postId)),
-  updatePost: (postId, content) => dispatch(updatePost(postId, content))
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(PostsContainer);
