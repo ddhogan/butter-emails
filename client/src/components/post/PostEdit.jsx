@@ -8,8 +8,8 @@ class PostEdit extends Component {
     super(props)
     this.state = {
       content: this.props.content,
-      id: this.props.id,
-      editing: true
+      id: props.match.params,
+      // editing: true
     }
   }
 
