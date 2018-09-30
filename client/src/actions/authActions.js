@@ -54,10 +54,10 @@ export const authenticate = (credentials) => {
     return fetch(`${API_URL}/user_token`, {
       method: 'POST',
       headers: {'Content-Type': 'application/json'},
-      body: JSON.stringify({ auth: credentials })
+      body: JSON.stringify({auth: credentials})
     })
-      .then(res => res.json())
-      .then(response => {
+    .then(res => res.json())
+    .then((response) => {
       const token = response.jwt;
       localStorage.setItem('token', token);
       return getUser(credentials)
