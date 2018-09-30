@@ -8,7 +8,7 @@ class PostEdit extends Component {
     super(props)
     this.state = {
       content: this.props.content,
-      postId: this.props.id,
+      postId: this.props.match.params.postId,
     }
   }
 
@@ -19,12 +19,12 @@ class PostEdit extends Component {
 
   handleSubmit = event => {
     event.preventDefault();
-    this.props.updatePost(this.state.postId, this.state.content);
+    this.props.updatePost(this.props.match.params.id, this.state.content);
     // this.props.updatePost(8, this.state.content); // confirmed that it works with hardcoded ID...
   }
 
   render () {
-    // console.log("this page rendered!")
+    console.log(this.props.match.params.id)
     return (
       <div>
         <form onSubmit={this.handleSubmit}>

@@ -21,7 +21,7 @@ class Post extends Component {
         { this.props.auth.currentUser.id === this.props.post.user_id ? // you have to be logged in, and they have to be your posts, to see these buttons
           <div className="manage-post">
             <button onClick={this.handleDeleteOnClick}>X </button>
-            <button><Link to={{pathname:`/edit/${this.props.post.id}`, state: {id: this.props.post.id, content: this.props.post.content} }}>Edit </Link></button>
+            <button><Link to={{pathname:`/edit/${this.props.post.id}`}}>Edit </Link></button>
           </div> : null}
         <small>{dateFormat(this.props.post.created_at)}, Post ID {this.props.post.id}</small>
       </div>
