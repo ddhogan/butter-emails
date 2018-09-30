@@ -14,7 +14,8 @@ class Navbar extends Component {
   render() {
     return (
       <div>
-        <small><Link to="/about">About</Link> | <Link to="/">Home</Link> | <Link to="/login">Login</Link> | <Link to="/" onClick={(e)=> this.handleLogout(e)}>Log Out</Link></small> | { (!!this.props.currentUser.username) ? (<small>Welcome {this.props.currentUser.username}!</small>) : <small>you are not logged in</small>}
+        <small><Link to="/about">About</Link> | <Link to="/">Home</Link> | </small>
+        { (!!this.props.currentUser.username) ? (<small>Welcome {this.props.currentUser.username}! | <Link to="/" onClick={(e)=> this.handleLogout(e)}>Log Out</Link></small>) : <small><Link to="/login">Login</Link> | you are not logged in</small>}
       </div>
     )
     

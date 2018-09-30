@@ -2,18 +2,19 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import Posts from './Posts';
 import PostInput from './PostInput';
-import { deletePost, createPost, editPost, fetchPosts } from '../../actions/postActions';
+import { deletePost, createPost, updatePost, fetchPosts } from '../../actions/postActions';
 import '../../css/PostsContainer.css';
 
 class PostsContainer extends Component {
   componentDidMount = () => {
     this.props.fetchPosts();
   }
+  
   render() {
     return (
       <div className="container">
         <PostInput createPost={this.props.createPost}/>
-        <Posts posts={this.props.posts} deletePost={this.props.deletePost} editPost={this.props.editPost} />
+        <Posts posts={this.props.posts} deletePost={this.props.deletePost} />
       </div>
     )
   }
@@ -25,7 +26,7 @@ const mapDispatchToProps = dispatch => ({
   fetchPosts: () => dispatch(fetchPosts()),
   createPost: post => dispatch(createPost(post)),
   deletePost: postId => dispatch(deletePost(postId)),
-  editPost: post => dispatch(editPost(post))
+  updatePost: (postId, content) => dispatch(updatePost(postId, content))
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(PostsContainer);

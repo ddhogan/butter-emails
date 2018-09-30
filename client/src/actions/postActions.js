@@ -34,11 +34,11 @@ export function deletePost(postId) {
   };
 };
 
-export function editPost(postId) {
-  return (dispatch) => {
-    dispatch({ type: actionTypes.EDIT_POST, payload: postId });
-  };
-};
+// export function editPost(postId) {
+//   return (dispatch) => {
+//     dispatch({ type: actionTypes.EDIT_POST, payload: postId });
+//   };
+// };
 
 export function updatePost(postId, content) {
   return (dispatch) => {

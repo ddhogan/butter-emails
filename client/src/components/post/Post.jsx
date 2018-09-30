@@ -1,6 +1,7 @@
 import React, {Component}  from 'react';
 import { connect } from 'react-redux';
-import { editPost } from '../../actions/postActions';
+import { withRouter } from 'react-router-dom'; 
+// import { editPost } from '../../actions/postActions';
 import '../../css/Post.css';
 import dateFormat from 'dateformat';
 
@@ -10,7 +11,7 @@ class Post extends Component {
     this.props.deletePost(this.props.post.id)
   }
   handleEditOnClick = () => {
-    this.props.editPost(this.props.post.id)
+    this.props.history.push('/edit');
   }
   
   render() {
@@ -32,6 +33,6 @@ class Post extends Component {
 
 const mapStateToProps = state => ({ auth: state.auth, });
 
-export default connect(mapStateToProps, {editPost})(Post);
+export default withRouter(connect(mapStateToProps, null)(Post));
 
 // this.props.auth.isAuthenticated

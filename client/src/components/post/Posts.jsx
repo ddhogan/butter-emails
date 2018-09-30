@@ -1,18 +1,16 @@
 import React from 'react';
 import Post from './Post';
 import '../../css/Posts.css';
-import PostEdit from './PostEdit';
 
 const Posts = (props) => {
   const postList = props.posts.posts.map(post =>{
     return (
       <div key={post.id}>
-        { post.editing ? <PostEdit key={post.id} post={post} /> : 
-          <Post
+        { <Post
             key={post.id}
             post={post}
-            deletePost={props.deletePost}
-            editPost={props.editPost} /> }
+            deletePost={props.deletePost} />
+        }
       </div>
     )
   });

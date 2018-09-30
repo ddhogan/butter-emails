@@ -67,7 +67,7 @@ export const authenticate = (credentials) => {
       dispatch(authSuccess(user, localStorage.token))
     })
     .catch((errors) => {
-      console.log(errors);
+      console.log(errors)
       dispatch(authFailure(errors))
       localStorage.clear()
     })
