@@ -2,6 +2,7 @@ import * as actionTypes from '../actions/actionTypes';
 
 export default function postsReducer(state = {
   posts: [],
+  editing: false,
 }, action) {
   switch(action.type){
     

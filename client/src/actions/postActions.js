@@ -42,7 +42,7 @@ export function deletePost(postId) {
 
 export function updatePost(postId, content) {
   return (dispatch) => {
-    return fetch(`/posts/${postId}`, {
+    return fetch(`/posts/${postId}`, { // this is where it fails
       method: 'PATCH',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ 'post': {content: content} }),

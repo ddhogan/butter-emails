@@ -18,13 +18,12 @@ class Post extends Component {
     return (
       <div className="post">
         <small>{this.props.post.user.username} writes: </small>
-        <p>{this.props.post.content}  
+        <p>{this.props.post.content}</p>
         { this.props.auth.currentUser.id === this.props.post.user_id ? // you have to be logged in, and they have to be your posts, to see these buttons
-          <React.Fragment>
+          <div className="manage-post">
             <button onClick={this.handleDeleteOnClick}>X </button>
-            <button><Link to={{pathname:`/edit/${this.props.post.id}`, state: {post: this.props.post}}}>Edit </Link></button>
-          </React.Fragment> : null}
-        </p>
+            <button><Link to={{pathname:`/edit/${this.props.post.id}`, props: {post: {content: this.props.post.content}}}}>Edit </Link></button>
+          </div> : null}
         <small>{dateFormat(this.props.post.created_at)}, Post ID {this.props.post.id}</small>
       </div>
     )

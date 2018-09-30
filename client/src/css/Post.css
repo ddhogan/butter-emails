@@ -14,3 +14,7 @@ div.post {
 .post small {
   float: left;
 }
+
+div.manage-post {
+  float: right;
+}

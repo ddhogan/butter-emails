@@ -13,7 +13,7 @@ class PostEdit extends Component {
     }
   }
 
-  handleChange(event) {
+  handleChange = (event) => {
     const { name, value } = event.target;
     this.setState({ [name]: value });
   }
@@ -24,6 +24,7 @@ class PostEdit extends Component {
   }
 
   render () {
+    // console.log("this got hit!")
     return (
       <div>
         <form onSubmit={this.handleSubmit}>
@@ -32,9 +33,9 @@ class PostEdit extends Component {
             type="text"
             name="content"
             value={this.props.content}
-            onChange={(event) => this.handleChange(event)}
+            onChange={this.handleChange}
           />
-          <input type="submit">Submit Edit</input>
+          <input type="submit" />
         </form>
       </div>
     )
