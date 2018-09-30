@@ -8,7 +8,7 @@ class PostEdit extends Component {
     super(props)
     this.state = {
       content: this.props.content,
-      id: props.match.params,
+      postId: this.props.id,
     }
   }
 
@@ -19,7 +19,8 @@ class PostEdit extends Component {
 
   handleSubmit = event => {
     event.preventDefault();
-    this.props.updatePost(this.state.id, this.state.content);
+    this.props.updatePost(this.state.postId, this.state.content);
+    // this.props.updatePost(8, this.state.content); // confirmed that it works with hardcoded ID...
   }
 
   render () {

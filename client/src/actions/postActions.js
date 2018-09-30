@@ -45,7 +45,7 @@ export function updatePost(postId, content) {
     return fetch(`/posts/${postId}`, { // this is where it fails
       method: 'PATCH',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ 'post': {content: content} }),
+      body: JSON.stringify({ 'post': {content: content, id: postId} }),
     })
     .then(response => response.json())
     .then(post => dispatch({ type: actionTypes.UPDATE_POST, payload: post }))
