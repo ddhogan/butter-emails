@@ -21,8 +21,7 @@ class PostEdit extends Component {
   handleSubmit = event => {
     event.preventDefault();
     this.props.updatePost(this.props.match.params.id, this.state.content);
-    // this.props.updatePost(8, this.state.content); // confirmed that it works with hardcoded ID...
-    this.props.history.push('/')
+    this.props.history.push('/');
   }
 
   render () {

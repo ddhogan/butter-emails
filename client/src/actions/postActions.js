@@ -34,15 +34,9 @@ export function deletePost(postId) {
   };
 };
 
-// export function editPost(postId) {
-//   return (dispatch) => {
-//     dispatch({ type: actionTypes.EDIT_POST, payload: postId });
-//   };
-// };
-
 export function updatePost(postId, content) {
   return (dispatch) => {
-    return fetch(`/posts/${postId}`, { // this is where it fails
+    return fetch(`/posts/${postId}`, {
       method: 'PATCH',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ 'post': {content: content, id: postId} }),
