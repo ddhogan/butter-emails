@@ -21,10 +21,10 @@ class Login extends Component {
   handleSubmit = event => {
     event.preventDefault();
     if (this.props.authenticate(this.state)) {
-      window.alert("You logged in!")
-      this.props.history.push('/')
+      window.alert("You logged in!");
+      this.props.history.push('/');
     } else {
-      window.alert("Sorry, something went wrong, please try again.") /*this part never seems to fire, even if the authentication failed*/
+      window.alert("Sorry, something went wrong, please try again."); /*this part never seems to fire, even if the authentication failed*/
     }
   }
   
@@ -51,7 +51,6 @@ class Login extends Component {
           <br/>
           <input type="submit" value="Login" />
         </form>
-        <hr />
         <br />
         <h3>Or <a href="/signup">Sign Up</a> here!</h3>
       </div>

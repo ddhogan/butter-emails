@@ -22,10 +22,10 @@ class SignUp extends Component {
   handleSubmit = (e) => {
     e.preventDefault();
     if (this.props.signup(this.state)) {
-      this.props.history.push('/')
-      window.alert("Thanks for signing up!")
+      this.props.history.push('/');
+      window.alert("Thanks for signing up!");
     } else {
-      window.alert("We're having issues creating your account.")
+      window.alert("We're having issues creating your account.");
     }
   }
 
@@ -59,8 +59,9 @@ class SignUp extends Component {
             onChange={this.handleChange} />
           <br />
           <input type="submit" value="Sign Up" />
-          <p>Already have an account? <a href="/login">Log In</a></p>
         </form>
+        <br />
+        <h3>Already have an account? <a href="/login">Log In</a></h3>
       </div>
     )
   }
