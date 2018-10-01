@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import { withRouter } from 'react-router-dom';
 import { updatePost } from '../../actions/postActions'
 import '../../css/PostInput.css';
 
@@ -21,10 +22,11 @@ class PostEdit extends Component {
     event.preventDefault();
     this.props.updatePost(this.props.match.params.id, this.state.content);
     // this.props.updatePost(8, this.state.content); // confirmed that it works with hardcoded ID...
+    this.props.history.push('/')
   }
 
   render () {
-    console.log(this.props.match.params.id)
+    // console.log(this.props.match.params.id)
     return (
       <div>
         <form onSubmit={this.handleSubmit}>
@@ -50,4 +52,4 @@ const mapDispatchToProps = dispatch => ({
   updatePost: (postId, content) => dispatch(updatePost(postId, content))
 })
 
-export default connect(mapStateToProps, mapDispatchToProps)(PostEdit);
+export default PostEdit = withRouter(connect(mapStateToProps, mapDispatchToProps)(PostEdit));
