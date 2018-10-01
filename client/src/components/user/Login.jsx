@@ -21,11 +21,10 @@ class Login extends Component {
   handleSubmit = event => {
     event.preventDefault();
     if (this.props.authenticate(this.state)) {
-      this.props.history.push('/')
       window.alert("You logged in!")
+      this.props.history.push('/')
     } else {
-      // this part never seems to fire, even if the authentication failed
-      window.alert("Sorry, something went wrong, please try again.")
+      window.alert("Sorry, something went wrong, please try again.") /*this part never seems to fire, even if the authentication failed*/
     }
   }
   
@@ -59,6 +58,5 @@ class Login extends Component {
     )
   }
 }
-const mapStateToProps = state => ({ auth: state.auth, });
 
-export default Login = withRouter(connect(mapStateToProps, {authenticate})(Login));
+export default Login = withRouter(connect(null, {authenticate})(Login));

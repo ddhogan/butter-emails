@@ -58,7 +58,7 @@ class SignUp extends Component {
             value={this.state.password}
             onChange={this.handleChange} />
           <br />
-          <button type="submit" value="Sign Up">Sign Up</button>
+          <input type="submit" value="Sign Up" />
           <p>Already have an account? <a href="/login">Log In</a></p>
         </form>
       </div>
