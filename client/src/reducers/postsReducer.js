@@ -2,7 +2,6 @@ import * as actionTypes from '../actions/actionTypes';
 
 export default function postsReducer(state = {
   posts: [],
-  editing: false,
 }, action) {
   switch(action.type){
     
@@ -21,10 +20,7 @@ export default function postsReducer(state = {
     case actionTypes.UPDATE_POST:
       return state.posts.map((post) => {
         if (post.id === action.payload.id) {
-          return {
-            ...post,
-            content: action.payload.content,
-          }
+          return { ...post, content: action.payload.content }
         } else return post;
       })
         

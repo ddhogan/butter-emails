@@ -18,7 +18,6 @@ class Login extends Component {
     this.setState({ [name]: value });
   }
   
-  
   handleSubmit = event => {
     event.preventDefault();
     if (this.props.authenticate(this.state)) {
