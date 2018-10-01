@@ -18,11 +18,11 @@ export default function postsReducer(state = {
       return { ...state, posts: state.posts.filter(post => post.id !== action.payload.id) }
         
     case actionTypes.UPDATE_POST:
-      return state.posts.map((post) => {
+      return {...state, posts: state.posts.map((post) => {
         if (post.id === action.payload.id) {
           return { ...post, content: action.payload.content }
         } else return post;
-      })
+      })}
         
     default:
       return state;
