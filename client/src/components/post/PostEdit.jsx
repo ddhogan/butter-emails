@@ -38,6 +38,7 @@ class PostEdit extends Component {
           />
           <input type="submit" />
         </form>
+        <button onClick={() => this.props.history.push('/')}> Cancel </button>
       </div>
     )
   }
