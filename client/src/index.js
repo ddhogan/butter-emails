@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { BrowserRouter as Router } from 'react-router-dom';
+import { Router } from 'react-router-dom';
+import createHistory from "history/createBrowserHistory" 
 import './css/index.css';
 import App from './App';
 import registerServiceWorker from './registerServiceWorker';
@@ -11,9 +12,11 @@ import rootReducer from './reducers/rootReducer';
 
 const store = createStore(rootReducer, compose(applyMiddleware(thunk), window.devToolsExtension ? window.devToolsExtension() : f => f))
 
+export const history = createHistory(); // let's us access history anywhere, including actions!!
+
 ReactDOM.render(
   <Provider store={store}>
-    <Router>
+    <Router history={history}>
       <App />
     </Router>
   </Provider>, 

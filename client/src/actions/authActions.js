@@ -1,6 +1,7 @@
 import fetch from 'isomorphic-fetch';
 import { API_URL } from './apiURL'
 import * as actionTypes from './actionTypes'
+import { history } from '../index';
 
 export const authRequest = () => {
   return {
@@ -9,6 +10,8 @@ export const authRequest = () => {
 }
 
 export const authSuccess = (user, token) => {
+  window.alert("You logged in!");
+  history.push('/');
   return {
     type: actionTypes.AUTHENTICATION_SUCCESS,
     user: user,
@@ -17,6 +20,7 @@ export const authSuccess = (user, token) => {
 }
 
 export const authFailure = (errors) => {
+  window.alert("Sorry, something went wrong, please try again.");
   return {
     type: actionTypes.AUTHENTICATION_FAILURE,
     errors: errors

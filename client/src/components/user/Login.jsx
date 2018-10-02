@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { connect } from 'react-redux';
+import { connect, } from 'react-redux';
 import { withRouter } from 'react-router-dom';
 import { authenticate } from '../../actions/authActions';
 import '../../css/Login.css';
@@ -20,12 +20,7 @@ class Login extends Component {
   
   handleSubmit = event => {
     event.preventDefault();
-    if (this.props.authenticate(this.state)) {
-      window.alert("You logged in!");
-      this.props.history.push('/');
-    } else {
-      window.alert("Sorry, something went wrong, please try again."); /*this part never seems to fire, even if the authentication failed*/
-    }
+    this.props.authenticate(this.state);
   }
   
   render() {
