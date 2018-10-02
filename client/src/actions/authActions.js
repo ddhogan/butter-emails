@@ -10,7 +10,7 @@ export const authRequest = () => {
 }
 
 export const authSuccess = (user, token) => {
-  window.alert("You logged in!");
+  window.alert("You are logged in!");
   history.push('/');
   return {
     type: actionTypes.AUTHENTICATION_SUCCESS,
@@ -96,6 +96,7 @@ export const getUser = (credentials) => {
 export const logout = () => {
   return dispatch => {
     localStorage.clear();
+    window.alert("You have logged out");
     return dispatch({
       type: actionTypes.LOGOUT
     });
