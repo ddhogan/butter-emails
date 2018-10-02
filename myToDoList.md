@@ -1,9 +1,5 @@
 # To do list
 
-* [X] ~~*finish enabling edit/update for posts*~~ **donezo!!**
-* [ ] log in message is always the same, even if didn't actually log in
-
-
 ### Need 2 container components
 1. SignUp [stateful]
 2. LogIn [stateful]
@@ -28,3 +24,6 @@
 * display more useful error messages for login/signup
 * OAuth (maybe twitter?)
 * Maybe [OpenID](https://openid.net/connect/), because OAuth is [annoying](https://oauth.net/articles/authentication/).
+
+### Completed:
+* [X] ~~*log in message is always the same, even if didn't actually log in*~~ solved by commit 0371413, with 'createHistory'
