@@ -60,7 +60,6 @@ class SignUp extends Component {
       </div>
     )
   }
-
 }
 
 export default SignUp = withRouter(connect(null, {signup})(SignUp));
