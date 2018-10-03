@@ -1,0 +1,8 @@
+.navbar {
+  background-color: blanchedalmond;
+  margin-top: 5px;
+  border-top: 1px solid #eee;
+  padding-bottom: 10px;
+  position: sticky;
+  bottom: 0px;
+}

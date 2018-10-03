@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import { connect } from 'react-redux';
 import { Link, withRouter } from "react-router-dom";
 import { logout } from '../actions/authActions';
+import '../css/Navbar.css'
 
 class Navbar extends Component {
 
@@ -13,9 +14,9 @@ class Navbar extends Component {
 
   render() {
     return (
-      <div>
-        <small><Link to="/about">About</Link> | <Link to="/">Home</Link> | </small>
-        { (!!this.props.currentUser.username) ? (<small>Welcome {this.props.currentUser.username}! | <Link to="/" onClick={(e)=> this.handleLogout(e)}>Log Out</Link></small>) : <small><Link to="/login">Login</Link> | you are not logged in</small>}
+      <div className="navbar">
+        <small><strong><Link to="/about">About</Link> | <Link to="/">Home</Link> | </strong></small>
+        { (!!this.props.currentUser.username) ? (<small><strong>Welcome {this.props.currentUser.username}! | <Link to="/" onClick={(e)=> this.handleLogout(e)}>Log Out</Link></strong></small>) : <small><strong><Link to="/login">Login</Link> | you are not logged in</strong></small>}
       </div>
     )
     
