@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import { Link, withRouter } from 'react-router-dom'; 
 import '../../css/Post.css';
 import dateFormat from 'dateformat';
+import LikeButton from './LikeButton';
 
 class Post extends Component {
 
@@ -23,8 +24,9 @@ class Post extends Component {
             <button onClick={this.handleDeleteOnClick}>X </button>
             <button><Link to={{pathname:`/edit/${this.props.post.id}`}}>Edit </Link></button>
           </div> : null}
-          
+
         <small>{dateFormat(this.props.post.created_at)}, Post ID {this.props.post.id}</small>
+        <LikeButton />
       </div>
     )
   }
