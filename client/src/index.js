@@ -12,7 +12,7 @@ import rootReducer from './reducers/rootReducer';
 
 const store = createStore(rootReducer, compose(applyMiddleware(thunk), window.devToolsExtension ? window.devToolsExtension() : f => f))
 
-export const history = createHistory(); // let's us access history anywhere, including actions!!
+export const history = createHistory(); // lets us access history anywhere, including actions!!
 
 ReactDOM.render(
   <Provider store={store}>
